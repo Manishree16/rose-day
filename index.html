@@ -35,21 +35,32 @@
         }
 
         /* --- Music Toggle --- */
-        .music-btn {
+      #musicBtn {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 1000;
-    background: #c9184a;
+    z-index: 9999;
+
+    /* look & feel */
+    background: #c9184a;          /* deep rose */
     color: white;
     border: none;
     width: 45px;
     height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 50%;           /* circle */
     font-size: 1.2rem;
+    cursor: pointer;
+
+    /* effects */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, background 0.3s ease;
 }
+
+#musicBtn:hover {
+    background: #ff4d6d;
+    transform: scale(1.1);
+}
+
 
         /* --- Main Container --- */
         .container {
@@ -166,7 +177,8 @@
 </head>
 <body>
 
-   <button onclick="document.getElementById('bgMusic').play()">🎵</button>
+  <button id="musicBtn" onclick="playMusic()">🎵</button>
+
 
 <audio id="bgMusic">
     <source src="song.mp3" type="audio/mpeg">
@@ -291,6 +303,7 @@
 </body>
 
 </html>
+
 
 
 
